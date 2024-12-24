@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg{
+    background: url('./Assets/Images/Sign_up_bg.svg');   
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center center;  
+    background-attachment: fixed;
+}
+
+.bar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .bar {
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+  }
