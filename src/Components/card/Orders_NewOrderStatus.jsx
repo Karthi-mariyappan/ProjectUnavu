@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import {Orderlist} from "./Orderlist";
-import OrderStatusBar from "./OrderStatusBar";
+import {Orderlist} from "./Orders_Orderlist";
+import OrderStatusBar from "./Orders_OrderStatusBar";
 import {Progress } from 'antd';
 
 function NewOrderStatus(props) {

@@ -1,5 +1,5 @@
-import OrderStatusBar from "./OrderStatusBar"
-import {Orderlist} from './Orderlist'
+import OrderStatusBar from "./Orders_OrderStatusBar"
+import {Orderlist} from './Orders_Orderlist'
 import delivery_boy from '../../Assets/Images/Delivery_boy.svg'
 import { Progress } from "antd"
 import customer from '../../Assets/Images/customerIcon.svg'

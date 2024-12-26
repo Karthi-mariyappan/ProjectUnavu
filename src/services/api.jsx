@@ -698,3 +698,232 @@ export const getDineOrderslist = (date, time) => {
     return orders
 };
 
+export const menudetails = () => {
+    return {
+      "Starters": [
+        {
+          "id": 1,
+          "name": "Crispy Corn",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 2,
+          "name": "Veg Manchurian",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 3,
+          "name": "Chicken Lollipop",
+          "stock": "off",
+          "type": "Non-Veg"
+        },
+        {
+          "id": 4,
+          "name": "Tandoori Paneer Tikka",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 5,
+          "name": "Prawn Tempura",
+          "stock": "off",
+          "type": "Non-Veg"
+        }
+      ],
+      "Main Course": [
+        {
+          "id": 6,
+          "name": "Paneer Butter Masala",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 7,
+          "name": "Butter Chicken",
+          "stock": "on",
+          "type": "Non-Veg"
+        },
+        {
+          "id": 8,
+          "name": "Dal Makhani",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 9,
+          "name": "Mutton Rogan Josh",
+          "stock": "off",
+          "type": "Non-Veg"
+        },
+        {
+          "id": 10,
+          "name": "Mix Veg Curry",
+          "stock": "on",
+          "type": "Veg"
+        }
+      ],
+      "Meals": [
+        {
+          "id": 11,
+          "name": "South Indian Thali",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 12,
+          "name": "North Indian Thali",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 13,
+          "name": "Mini Meal Box",
+          "stock": "off",
+          "type": "Veg"
+        },
+        {
+          "id": 14,
+          "name": "Rajma Chawal Combo",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 15,
+          "name": "Fish Curry Meal",
+          "stock": "off",
+          "type": "Non-Veg"
+        }
+      ],
+      "Combos": [
+        {
+          "id": 16,
+          "name": "Burger and Fries Combo",
+          "stock": "on",
+          "type": "Non-Veg"
+        },
+        {
+          "id": 17,
+          "name": "Pasta and Garlic Bread",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 18,
+          "name": "Pizza and Coke",
+          "stock": "off",
+          "type": "Veg"
+        },
+        {
+          "id": 19,
+          "name": "Rice and Curry Combo",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 20,
+          "name": "Kebab Platter",
+          "stock": "off",
+          "type": "Non-Veg"
+        }
+      ],
+      "Curries": [
+        {
+          "id": 21,
+          "name": "Kadai Paneer",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 22,
+          "name": "Chicken Chettinad",
+          "stock": "on",
+          "type": "Non-Veg"
+        },
+        {
+          "id": 23,
+          "name": "Malai Kofta",
+          "stock": "off",
+          "type": "Veg"
+        },
+        {
+          "id": 24,
+          "name": "Palak Paneer",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 25,
+          "name": "Egg Curry",
+          "stock": "on",
+          "type": "Non-Veg"
+        }
+      ],
+      "Biryanis": [
+        {
+          "id": 26,
+          "name": "Hyderabadi Chicken Biryani",
+          "stock": "on",
+          "type": "Non-Veg"
+        },
+        {
+          "id": 27,
+          "name": "Veg Dum Biryani",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 28,
+          "name": "Mutton Biryani",
+          "stock": "off",
+          "type": "Non-Veg"
+        },
+        {
+          "id": 29,
+          "name": "Prawns Biryani",
+          "stock": "on",
+          "type": "Non-Veg"
+        },
+        {
+          "id": 30,
+          "name": "Egg Biryani",
+          "stock": "off",
+          "type": "Non-Veg"
+        }
+      ],
+      "Quick Bite": [
+        {
+          "id": 31,
+          "name": "Samosa",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 32,
+          "name": "Sandwich",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 33,
+          "name": "Spring Rolls",
+          "stock": "off",
+          "type": "Veg"
+        },
+        {
+          "id": 34,
+          "name": "French Fries",
+          "stock": "on",
+          "type": "Veg"
+        },
+        {
+          "id": 35,
+          "name": "Onion Rings",
+          "stock": "off",
+          "type": "Veg"
+        }
+      ]
+    };
+  };
+  

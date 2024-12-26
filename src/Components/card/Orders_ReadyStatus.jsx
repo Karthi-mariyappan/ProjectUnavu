@@ -1,5 +1,5 @@
-import OrderStatusBar from "./OrderStatusBar";
-import Otp_card from '../card/Otp_card'
+import OrderStatusBar from "./Orders_OrderStatusBar";
+import Otp_card from './Otp_card'
 import { useState } from "react";
 import delivery_boy from '../../Assets/Images/Delivery_boy.svg'
 import { StarFilled } from '@ant-design/icons';

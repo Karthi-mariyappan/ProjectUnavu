@@ -3,7 +3,7 @@ import search from '../../Assets/Images/Search.svg'
 import { fetchorderbyid, getDineOrderslist, hotelDetails,GetOrderById} from "../../services/api"
 import moment from 'moment';
 import { DatePicker,TimePicker  } from 'antd';
-import Dinein_Request_card from "./Dinein_Request_card";
+import Dinein_Request_card from "./Orders_Dinein_Request_card";
 
 const DineinOrderlist = (props) => {
         const LoadNextData = useRef(null);
