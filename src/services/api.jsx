@@ -927,3 +927,159 @@ export const menudetails = () => {
     };
   };
   
+
+export const tablelisted = async() =>{
+  return {
+    "Floor ~ 1": [
+      {
+        "2 Seater": [
+          {
+            "id": 1,
+            "TableNo": "T1/S1",
+            "Seater": 2,
+            "Available": true
+          },
+          {
+            "id": 2,
+            "TableNo": "T2/S1",
+            "Seater": 2,
+            "Available": false
+          }
+        ]
+      },
+      {
+        "4 Seater": [
+          {
+            "id": 3,
+            "TableNo": "T3/S1",
+            "Seater": 4,
+            "Available": true
+          },
+          {
+            "id": 4,
+            "TableNo": "T4/S1",
+            "Seater": 4,
+            "Available": false
+          }
+        ]
+      },
+      {
+        "8 Seater": [
+          {
+            "id": 5,
+            "TableNo": "T5/S1",
+            "Seater": 8,
+            "Available": true
+          },
+          {
+            "id": 6,
+            "TableNo": "T6/S1",
+            "Seater": 8,
+            "Available": false
+          }
+        ]
+      }
+    ],
+    "Floor ~ 2": [
+      {
+        "2 Seater": [
+          {
+            "id": 7,
+            "TableNo": "T1/S2",
+            "Seater": 2,
+            "Available": true
+          },
+          {
+            "id": 8,
+            "TableNo": "T2/S2",
+            "Seater": 2,
+            "Available": true
+          }
+        ]
+      },
+      {
+        "4 Seater": [
+          {
+            "id": 9,
+            "TableNo": "T3/S2",
+            "Seater": 4,
+            "Available": false
+          },
+          {
+            "id": 10,
+            "TableNo": "T4/S2",
+            "Seater": 4,
+            "Available": true
+          }
+        ]
+      },
+      {
+        "8 Seater": [
+          {
+            "id": 11,
+            "TableNo": "T5/S2",
+            "Seater": 8,
+            "Available": true
+          },
+          {
+            "id": 12,
+            "TableNo": "T6/S2",
+            "Seater": 8,
+            "Available": false
+          }
+        ]
+      }
+    ],
+    "Floor ~ 3": [
+      {
+        "2 Seater": [
+          {
+            "id": 13,
+            "TableNo": "T1/S3",
+            "Seater": 2,
+            "Available": false
+          },
+          {
+            "id": 14,
+            "TableNo": "T2/S3",
+            "Seater": 2,
+            "Available": true
+          }
+        ]
+      },
+      {
+        "4 Seater": [
+          {
+            "id": 15,
+            "TableNo": "T3/S3",
+            "Seater": 4,
+            "Available": true
+          },
+          {
+            "id": 16,
+            "TableNo": "T4/S3",
+            "Seater": 4,
+            "Available": true
+          }
+        ]
+      },
+      {
+        "8 Seater": [
+          {
+            "id": 17,
+            "TableNo": "T5/S3",
+            "Seater": 8,
+            "Available": false
+          },
+          {
+            "id": 18,
+            "TableNo": "T6/S3",
+            "Seater": 8,
+            "Available": true
+          }
+        ]
+      }
+    ]
+  }
+  
+}

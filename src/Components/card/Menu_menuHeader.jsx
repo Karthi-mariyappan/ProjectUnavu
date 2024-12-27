@@ -18,7 +18,7 @@ function Menu_menuHeader(props) {
                     </div>
                  </div>
                  <div className="flex-1">
-                   <div className="h-full md:w-4/5 border flex items-center rounded-xl bg-white">
+                   <div className="h-full md:w-4/5 xl:w-[550px] border flex items-center rounded-xl bg-white">
                      <div className="w-full flex h-full py-1 px-2 ">
                            <div className={`flex-1  rounded-xl  flex items-center justify-center cursor-pointer ${props.btntoggle?'bg-[#33374D] text-white':'text-black'}`} onClick={()=>{props.setbtntoggle(true)}}><h1 className="relative px-5">Delivery</h1></div>
                            <div className={`flex-1  rounded-xl  flex items-center justify-center cursor-pointer ${props.btntoggle?'text-black':'text-white bg-[#33374D]'}`} onClick={()=>{props.setbtntoggle(false)}}><h1 className="relative px-5">Dine-in</h1></div>
