@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom'
-import Navbar_img_1 from '../../Assets/Images/Navbar_1.svg'
-import Navbar_img_2 from '../../Assets/Images/Navbar_2.svg'
-import Navbar_img_3 from '../../Assets/Images/Navbar_3.svg'
-import Navbar_img_4 from '../../Assets/Images/Navbar_4.svg'
-import Navbar_img_5 from '../../Assets/Images/Navbar_5.svg'
-import Navbar_img_6 from '../../Assets/Images/Navbar_6.svg'
+import Navbar_img_1 from '../../Assets/Images/navbar1.svg'
+import Navbar_img_2 from '../../Assets/Images/navbar2.svg'
+import Navbar_img_3 from '../../Assets/Images/navbar3.svg'
+import Navbar_img_4 from '../../Assets/Images/navbar4.svg'
+import Navbar_img_5 from '../../Assets/Images/navbar5.svg'
+import Navbar_img_6 from '../../Assets/Images/navbar6.svg'
 const Navbar = (props) => {
     const navigate = useNavigate()
     const NavbarList={

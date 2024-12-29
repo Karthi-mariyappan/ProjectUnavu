@@ -1,6 +1,6 @@
-import Header_Logo from '../../Assets/Images/Header_Logo.svg'
+import Header_Logo from '../../Assets/Images/headerlogo.svg'
 import { MenuOutlined } from '@ant-design/icons';
-import Temp_pf from '../../Assets/Images/Temp_pf.png'
+import Temp_pf from '../../Assets/Images/hoteldp.png'
 const Header=()=>{
     return(
         <>

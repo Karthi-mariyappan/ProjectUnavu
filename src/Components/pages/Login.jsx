@@ -1,7 +1,7 @@
-import leftBanner from "../../Assets/Images/Login_banner_.svg";
-import Unavu_logo from "../../Assets/Images/Unavu_logo.svg";
-import chart from "../../Assets/Images/Login_chart_icon.svg";
-import doubt from "../../Assets/Images/Login_doubt_icon.svg";
+import leftBanner from "../../Assets/Images/loginbanner.svg";
+import Unavu_logo from "../../Assets/Images/unavulogo.svg";
+import chart from "../../Assets/Images/loginchaticon.svg";
+import doubt from "../../Assets/Images/logindoubticon.svg";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { EyeOutlined } from "@ant-design/icons";
@@ -9,6 +9,7 @@ import { EyeInvisibleOutlined } from "@ant-design/icons";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Link } from "react-router-dom";
+
 import { getAuthentication } from "../../services/api";
 
 const FormSchema = z.object({

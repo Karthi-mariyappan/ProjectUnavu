@@ -1,7 +1,7 @@
 import OrderStatusBar from "./Orders_OrderStatusBar";
 import Otp_card from './Otp_card'
 import { useState } from "react";
-import delivery_boy from '../../Assets/Images/Delivery_boy.svg'
+import delivery_boy from '../../Assets/Images/deliveryboy.svg'
 import { StarFilled } from '@ant-design/icons';
 import {Generate_otp} from '../../services/api'
 

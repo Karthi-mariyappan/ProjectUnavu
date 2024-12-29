@@ -1,4 +1,4 @@
-import image from '../../Assets/Images/DineIn_Tracking.svg'
+import image from '../../Assets/Images/dineintracking.svg'
 import { Progress } from 'antd';
 function Dinein_Request_card(props) {
   return (

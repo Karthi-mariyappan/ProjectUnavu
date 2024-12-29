@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Components/pages/Login';
 import Forgot from './Components/pages/Forgot';
-import Password_reset from './Components/pages/Password_reset';
 import Signup from './Components/pages/Signup';
 import Header from './Components/card/Header';
 import Panels from './Components/pages/Panels';
+import Password_reset from './Components/pages/Password_reset';
 function App() {
   return (
     <Router>

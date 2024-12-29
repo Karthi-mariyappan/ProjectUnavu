@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Unavu_logo from "../../Assets/Images/Unavu_logo.svg";
+import Unavu_logo from "../../Assets/Images/unavulogo.svg";
 import Otp_card from "../card/Otp_card";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";

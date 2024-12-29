@@ -1,8 +1,8 @@
-import leftBanner from "../../Assets/Images/Login_banner_.svg";
-import Unavu_logo from "../../Assets/Images/Unavu_logo.svg";
-import chart from "../../Assets/Images/Login_chart_icon.svg";
-import doubt from "../../Assets/Images/Login_doubt_icon.svg";
-import tick from "../../Assets/Images/Tick.svg";
+import leftBanner from "../../Assets/Images/loginbanner.svg";
+import Unavu_logo from "../../Assets/Images/unavulogo.svg";
+import chart from "../../Assets/Images/loginchaticon.svg";
+import doubt from "../../Assets/Images/logindoubticon.svg";
+import tick from "../../Assets/Images/tick.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { Otp_verification } from "../../services/api";
 import { useState } from "react";

@@ -3,7 +3,7 @@ import sreach from '../../Assets/Images/search.svg'
 import {menudetails} from '../../services/api'
 import {Menu_ListedCard} from "./Menu_ListedCard";
 import veg from '../../Assets/Images/veg.svg'
-import Nonveg from '../../Assets/Images/NonVeg.svg'
+import Nonveg from '../../Assets/Images/nonveg.svg'
 
 function Menu_categories(props) {
     const [menudata,setmenudata]=useState([])
