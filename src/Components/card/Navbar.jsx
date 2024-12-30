@@ -39,21 +39,19 @@ const Navbar = (props) => {
             Object.keys(NavbarList).map((keys) => {
                 return(
                     <div key={keys} className={`h-[80px] py-2 flex gap-1 flex-col cursor-pointer transition-all duration-200 ${props.panelname==NavbarList[keys].Name? "bg-[#ECF1F6]":""} p-2`} onClick={()=>{navigate("/panel/"+NavbarList[keys].Name)}}>
-                           <div className='h-full flex'>
-                               <div className='flex-1 flex  flex-col'>
-                                   <div className=' flex-1 h-[70%] flex items-center justify-center '>
-                                       <img src={NavbarList[keys].ImageSrc} alt='' className=' h-[30px]'/>
-                                   </div>
-                                   <div className=' text-sm text-center '>{(NavbarList[keys].Name).toUpperCase()}</div>
-                               </div>
-                               
-                           </div>
-                           {
-                               props.panelname==NavbarList[keys].Name && (
-                                    <div className='bg-[#FF8811] h-[4px] w-[60%] mr-auto ml-auto rounded-full'></div>
-                               )
-                           }
-                           
+                        <div className='h-full flex'>
+                            <div className='flex-1 flex  flex-col'>
+                                <div className=' flex-1 h-[70%] flex items-center justify-center '>
+                                    <img src={NavbarList[keys].ImageSrc} alt='' className=' h-[30px]'/>
+                                </div>
+                                <div className=' text-sm text-center '>{(NavbarList[keys].Name).toUpperCase()}</div>
+                            </div>
+                        </div>
+                        {
+                            props.panelname==NavbarList[keys].Name && (
+                                 <div className='bg-[#FF8811] h-[4px] w-[60%] mr-auto ml-auto rounded-full'></div>
+                            )
+                        }
                     </div>
                 )
             })

@@ -17,13 +17,16 @@ function Menu_AddOns(props) {
      const {register,handleSubmit,formState: { errors },setError,clearErrors} = useForm({ resolver: zodResolver(FormSchema) });
      const [totalportion,setportion]=useState(0)
      const onSubmit = async(data) => {   console.log(data) }
+
   return (
    <>
+       {/* Add new Odd Ons */}
        <form  onSubmit={handleSubmit(onSubmit)}>
             <h1 className="text-[20px] md:text-[22px] py-5">ODD ONS - VARIENTS</h1>
+            {/* Get Total Add on need to List */}
             <div className='flex flex-row pt-5'>
               <div className='flex-1  px-5 flex gap-4 flex-col'>
-                  <h1>Total Portion Size</h1>
+                  <h1>Total AddOns</h1>
                   <div className="relative w-full">
                     <select className="appearance-none border w-full h-[60px] px-5 pr-10 rounded-md font-light" onChange={(e)=>{setportion(e.target.value)}}>
                         <option hidden>Select</option>
@@ -38,17 +41,18 @@ function Menu_AddOns(props) {
                     </svg>
                   </div>
                </div>
-               <div className='flex-1 px-5 flex gap-4 flex-col'>
-               </div>
+               <div className='flex-1 px-5 flex gap-4 flex-col'></div>
             </div>
+            {/* Boxs for the New Add ons Based on the Selected number*/}
             {
                   totalportion != null && (
                     <>
                       { 
                        Array.from({ length: totalportion }).map((_, i) => (
                         <div key={i}>
-                          <h1 className="text-[20px] md:text-[18px] pt-10">Portion size Details ~ {i+1}</h1>
+                          <h1 className="text-[20px] md:text-[18px] pt-10">Add Ons Details ~ {i+1}</h1>
                           <div className='flex flex-row pt-5'>
+                            {/* Add On name */}
                             <div className='flex-1 px-5 flex gap-4 flex-col'>
                               <h1>AddOn Name</h1>
                               <div className="relative w-full">
@@ -69,12 +73,14 @@ function Menu_AddOns(props) {
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 9l-7.5 7.5L4.5 9" />
                                 </svg>
                               </div>
+                              {/* Error */}
                               {errors[`AddName${i + 1}`] && (
                                      <p className="font-light p-1 text-red-500 text-[14px]">
                                         {errors[`AddName${i + 1}`].message}*
                                      </p>
                                   )} 
                             </div>
+                            {/* price */}
                             <div className='flex-1 px-5 flex gap-4 flex-col'>
                               <h1>AddOn Price <span className='text-[#999999] text-sm font-light'>(Excluding all tax)</span></h1>
                               <div className="relative w-full">
@@ -85,6 +91,7 @@ function Menu_AddOns(props) {
                                   </svg>
                                 </div>
                               </div>
+                              {/* Error */}
                               {errors[`Price${i + 1}`] && (
                                      <p className="font-light p-1 text-red-500 text-[14px]">
                                         {errors[`Price${i + 1}`].message}*
@@ -99,18 +106,20 @@ function Menu_AddOns(props) {
                   )
             }
             {
-                 (totalportion!=0)&&(
-                  <div className='w-full py-8 px-5 flex items-center justify-center'>
-                    <button type='button' className='text-[#DC3333] px-3 underline underline-offset-4 rounded-xl' onClick={()=>{props.setaddnewtoggle(false)}}>Cancel</button>
+               (totalportion!=0)&&(
+                 <div className='w-full py-8 px-5 flex items-center justify-center'>
+                     {/* Cancel */}
+                     <button type='button' className='text-[#DC3333] px-3 underline underline-offset-4 rounded-xl' onClick={()=>{props.setaddnewtoggle(false)}}>Cancel</button>
+                     {/* Submit */}
                      <button className='bg-[#0BBA08] ml-auto text-white px-10 flex flex-row items-center justify-center py-5 gap-5 rounded-xl'>
                           Submit
                           <svg width="129" height="16" viewBox="0 0 129 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                <path d="M128.707 8.70711C129.098 8.31658 129.098 7.68342 128.707 7.29289L122.343 0.928932C121.953 0.538408 121.319 0.538408 120.929 0.928932C120.538 1.31946 120.538 1.95262 120.929 2.34315L126.586 8L120.929 13.6569C120.538 14.0474 120.538 14.6805 120.929 15.0711C121.319 15.4616 121.953 15.4616 122.343 15.0711L128.707 8.70711ZM0 9H128V7H0V9Z" fill="white"/>
                           </svg>
                      </button>
-                </div>
-                 )
-                }  
+                 </div>
+               )
+            }  
        </form>
    </>
   )

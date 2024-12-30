@@ -9,21 +9,58 @@ const DineinOrderlist = (props) => {
         const LoadNextData = useRef(null);
         const [filterData, setfilterdata] = useState();
         const [filterOrderdata,setfilterorderdata]=useState(null)
-
         const [selectedDate,setDate]=useState(null)
         const [selectedtime,settime]=useState(null)
-
         const [hotelDetailsdata,sethotelDetailsdata]=useState(null)
-
         const [DineOrderlist,setDineOrderList]=useState(null)
-
         const [disableList,setdisableList]=useState({
             hourlist:[],
             Minlist:[]
         })
 
+         useEffect(()=>{
+           const hotelTiming = async()=>{
+              try {
+                 const data = await hotelDetails()
+                 sethotelDetailsdata(data)
+  
+                 const closingTime = data[0].Closing_time
+                 const [Close_hour, Close_minute] = closingTime.split(':');
+
+                 const Opening_time = data[0].Opening_time
+                 const [Open_hour, Open_minute] = Opening_time.split(':');
+               
+
+                 for(let i=Close_hour+1;i<=24;i++){
+                   disableList.Minlist.push(parseInt(i))
+                 }
+
+                 for (let j = Open_hour-1; j >= 0; --j) {
+                   disableList.Minlist.push(j)
+                 }               
+              } catch (error) {
+                console.log(error)
+              }
+           }
+           hotelTiming()
+        },[])
 
 
+        // Get List 
+        useEffect(()=>{
+             const getdetails=async()=>{
+                 try {
+                     const data = await getDineOrderslist(selectedDate,selectedtime)
+                     setDineOrderList(data)
+                 } catch (error) {
+                     console.log(error)
+                 }
+             }
+             getdetails()
+         },[selectedDate,selectedtime])
+
+
+        // Search By order ID
         const getbyID=async()=>{
               try {
                  console.log("hi")
@@ -31,7 +68,6 @@ const DineinOrderlist = (props) => {
                 console.log(error)
               }
         }
-
 
         // Get Detail on end of Scroll bar
         const handleScroll = async() => {
@@ -41,67 +77,32 @@ const DineinOrderlist = (props) => {
                 console.log("End")
             }
           }
-        };
-
-        useEffect(()=>{
-            const hotelTiming = async()=>{
-               try {
-                  const data = await hotelDetails()
-                  sethotelDetailsdata(data)
-    
-                  const closingTime = data[0].Closing_time
-                  const [Close_hour, Close_minute] = closingTime.split(':');
-
-                  const Opening_time = data[0].Opening_time
-                  const [Open_hour, Open_minute] = Opening_time.split(':');
-                
-
-                  for(let i=Close_hour+1;i<=24;i++){
-                    disableList.Minlist.push(parseInt(i))
-                  }
-
-                  for (let j = Open_hour-1; j >= 0; --j) {
-                    disableList.Minlist.push(j)
-                  }               
-               } catch (error) {
-                 console.log(error)
-               }
-            }
-            hotelTiming()
-        },[])
-
-        // Get List 
-        useEffect(()=>{
-            const getdetails=async()=>{
-                try {
-                    const data = await getDineOrderslist(selectedDate,selectedtime)
-                    setDineOrderList(data)
-                } catch (error) {
-                    console.log(error)
-                }
-            }
-            getdetails()
-        },[selectedDate,selectedtime])
-
+        }
+        
+        // Disable the Times Slots
         const disabledTime = () => ({
             disabledHours: () => disableList.Minlist
         });
 
+        // Onchange the Date Set to SetDate UseState Hook
         const handleDateChange = (date, dateString) => {
             setDate(dateString)
         };
+
+        // Onchange the timeset to Settime UseState Hook
         const handleTimeChange = (date, dateString) => {
             settime(dateString)
         };
 
-         const OnclickgetOrders=async(Id)=>{
-              try {
-                  const data =  await GetOrderById(Id)
-                  props.setorderID(data)
-              } catch (error) {
-                console.log(error)
-              }
-            }
+        // get Orders by ID
+        const OnclickgetOrders=async(Id)=>{
+          try {
+              const data =  await GetOrderById(Id)
+              props.setorderID(data)
+          } catch (error) {
+            console.log(error)
+          }
+        }
 
   return (
     <div className=" w-full max-w-[400px] 2xl:max-w-[550px] h-full flex flex-col bg-white rounded-2xl relative">
@@ -166,6 +167,7 @@ const DineinOrderlist = (props) => {
                                 return(
                                     <> 
                                     <div key={item.Id} onClick={()=>{OnclickgetOrders(item.Id)}}>
+                                       {/* Dinein Request Card */}
                                          <Dinein_Request_card dataitem={item}/>
                                     </div>
                                       

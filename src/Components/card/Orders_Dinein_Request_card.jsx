@@ -12,14 +12,13 @@ function Dinein_Request_card(props) {
            </div>
          </div>
          <div className=' flex-1 flex flex-col'>
-                     <h1 className='text-[#FF8811] text-[20px] text-right'>{props.dataitem.Id}</h1>
-                     <div className='flex-1 flex flex-col items-center justify-center'>
-                        <img src={image} className='w-[30px]' />
-                   
-                        <h1 className='text-[13px]'>Arrived in</h1>
-                        <h1 className='text-[#FF8811] text-[15px] text-right font-normal'>{props.dataitem.CustomerArrivedIn}</h1>
-                        <Progress  strokeColor="#FF8811" showInfo={false}/>
-                     </div>
+            <h1 className='text-[#FF8811] text-[20px] text-right'>{props.dataitem.Id}</h1>
+            <div className='flex-1 flex flex-col items-center justify-center'>
+               <img src={image} className='w-[30px]' /> 
+               <h1 className='text-[13px]'>Arrived in</h1>
+               <h1 className='text-[#FF8811] text-[15px] text-right font-normal'>{props.dataitem.CustomerArrivedIn}</h1>
+               <Progress  strokeColor="#FF8811" showInfo={false}/>
+            </div>
          </div>
     </div>
   )

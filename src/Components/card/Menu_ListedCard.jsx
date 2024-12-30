@@ -1,7 +1,9 @@
 import { ConfigProvider, Switch } from 'antd';
 
+// Component for Dish list Card
 function Menu_ListedCard(props) {
   return (
+
        <div className='flex items-center px-5 py-2 gap-4 font-light border'>
            <img src={props.image} className='' alt=''/>
         <div className='flex-1 '>
@@ -29,7 +31,7 @@ function Menu_ListedCard(props) {
     </div>
   )
 }
-
+// Component for Table list card
 function Menu_ListedTableCard(props) {
   return (
        <div className='flex items-center px-5 py-2 gap-4 font-light border'>
@@ -59,7 +61,5 @@ function Menu_ListedTableCard(props) {
     </div>
   )
 }
-
-
 
 export {Menu_ListedTableCard,Menu_ListedCard} 

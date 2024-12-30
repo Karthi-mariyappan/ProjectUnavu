@@ -14,14 +14,12 @@ const FormSchema = z.object({
 })
 
 function Menu_RequestNewDish(props) {
-        const [value, setValue] = useState(1);
-        const [totalportion,setportion]=useState(0)
         const {register,handleSubmit,formState: { errors },setError,clearErrors} = useForm({ resolver: zodResolver(FormSchema) });
-    
-        const onSubmit = async(data) => {
-          console.log(data)
-        }
-
+        const [value, setValue] = useState(1);
+        const [filenames,setfilenames]=useState({
+          Dishimage:""
+       })
+        //  Image Error
         const fileHandler=(e)=>{
             const {name , files} = e.target
             const fileData=files[0]
@@ -40,28 +38,35 @@ function Menu_RequestNewDish(props) {
                 message: "File size exceeds 3MB. Please upload a smaller PDF file."
               });
             }
+
             setfilenames({
               ...filenames,
               [name]: fileData,
             });
             clearErrors(name);
           }
-          const [filenames,setfilenames]=useState({
-            Dishimage:""
-         })
+
+        // Submit the New Dish add request
+        const onSubmit = async(data) => {
+          console.log(data)
+        }
+
   return (
     <>
+        {/* Add new Dish request item */}
        <form  onSubmit={handleSubmit(onSubmit)}>
-       <h1 className="text-[20px] md:text-[22px] py-5">Add New Item Request</h1>
+            <h1 className="text-[20px] md:text-[22px] py-5">Add New Item Request</h1>
+            {/* Radio Veg/Non Veg */}
             <div className='w-full h-[120px] bg-[#ECF1F6] rounded-xl font-light flex flex-col gap-2 justify-center px-10'>
                   <h1 className='text-[#808080] text-lg'>Veg/non veg</h1>
                   <Radio.Group onChange={(e) => setValue(e.target.value)} value={value}>
-                   <Radio value={1} className='text-xl font-normal' style={{buttonCheckedBg: '#ffffff' }}>Veg</Radio>
+                    <Radio value={1} className='text-xl font-normal' style={{buttonCheckedBg: '#ffffff' }}>Veg</Radio>
                     <Radio value={2}  className='text-xl font-normal'>Non - Veg</Radio>
                   </Radio.Group>
             </div>
             <div className='flex flex-row pt-5'>
-              <div className='flex-1  px-5 flex gap-4 flex-col'>
+              {/* Select Item Category */}
+               <div className='flex-1  px-5 flex gap-4 flex-col'>
                   <h1>Item Category</h1>
                   <div className="relative w-full font-light">
                     <select className="appearance-none border w-full h-[60px] px-5 pr-10 rounded-md" {...register("Item_Category")}>
@@ -81,12 +86,15 @@ function Menu_RequestNewDish(props) {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 9l-7.5 7.5L4.5 9"/>
                     </svg>
                   </div>
+                  {/* Error for Item Category */}
                    {errors.Item_Category && (
-                                     <p className="font-light p-1 text-red-500 text-[14px]">
-                                        {errors.Item_Category.message}*
-                                     </p>
-                                  )}  
+                      <p className="font-light p-1 text-red-500 text-[14px]">
+                         {errors.Item_Category.message}*
+                      </p>
+                    )}  
                </div>
+
+               {/* Select Item Sub-Category */}
                <div className='flex-1 px-5 flex gap-4 flex-col'>
                   <h1>Item Sub-Category</h1>
                   <div className="relative w-full">
@@ -107,49 +115,58 @@ function Menu_RequestNewDish(props) {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 9l-7.5 7.5L4.5 9"/>
                     </svg>
                   </div>
+                  {/* Error for Sub-Category */}
                   {errors.Sub_Category && (
-                                     <p className="font-light p-1 text-red-500 text-[14px]">
-                                        {errors.Sub_Category.message}*
-                                     </p>
-                                  )}  
+                     <p className="font-light p-1 text-red-500 text-[14px]">
+                        {errors.Sub_Category.message}*
+                     </p>
+                  )}  
                </div>
          </div>
          <div className='flex flex-row pt-5'>
+              {/* Dish name */}
               <div className='flex-1  px-5 flex gap-4 flex-col'>
                   <h1>Dish Name</h1>
                   <div className="relative w-full">
                     <input type='text'  className="border w-full h-[60px] px-5 pr-10 rounded-md" placeholder='' {...register("Dish_Name")}/>
                   </div>
+                  {/* Error Dish Name */}
                   {errors.Dish_Name && (
-                                     <p className="font-light p-1 text-red-500 text-[14px]">
-                                        {errors.Dish_Name.message}*
-                                     </p>
-                                  )}  
-               </div>
-               <div className='flex-1  px-5 flex gap-4 flex-col'>
+                     <p className="font-light p-1 text-red-500 text-[14px]">
+                        {errors.Dish_Name.message}*
+                     </p>
+                  )}  
+              </div>
+              
+              {/* Dish Description */}
+              <div className='flex-1  px-5 flex gap-4 flex-col'>
                   <h1>Description</h1>
                   <div className="relative w-full font-light">
                       <input type='text'  className="border w-full h-[60px] px-5 pr-10 rounded-md" placeholder='' {...register("Description")}/>
                   </div>
+                  {/* Error Dish Dscription */}
                   {errors.Description && (
-                                     <p className="font-light p-1 text-red-500 text-[14px]">
-                                        {errors.Description.message}*
-                                     </p>
-                                  )} 
-               </div>
+                     <p className="font-light p-1 text-red-500 text-[14px]">
+                        {errors.Description.message}*
+                     </p>
+                  )} 
+              </div>
          </div>
          <div className='flex flex-row pt-5'>
+               {/* Input box for Ingredients */}
                 <div className='flex-1  px-5 flex gap-4 flex-col'>
                   <h1>Ingredients</h1>
                   <div className="relative w-full font-light">
                       <input type='text'  className="border w-full h-[60px] px-5 pr-10 rounded-md" placeholder='' {...register("Ingredients")}/>
                   </div>
+                  {/* Error in Dish ingredients */}
                   {errors.Ingredients && (
-                                     <p className="font-light p-1 text-red-500 text-[14px]">
-                                        {errors.Ingredients.message}*
-                                     </p>
-                                  )} 
+                     <p className="font-light p-1 text-red-500 text-[14px]">
+                        {errors.Ingredients.message}*
+                     </p>
+                  )} 
                 </div>
+                {/* Add dish Image */}
                 <div className='flex-1  px-5 flex gap-4 flex-col'>
                   <h1>Dish Image</h1>
                   <div className="relative w-full font-light">
@@ -163,22 +180,25 @@ function Menu_RequestNewDish(props) {
                          </p>
                       </div>
                   </div>
+                  {/* Error in added Dish Images */}
                   {errors.Dishimage && (
-                                     <p className="font-light p-1 text-red-500 text-[14px]">
-                                        {errors.Dishimage.message}*
-                                     </p>
-                                  )} 
+                     <p className="font-light p-1 text-red-500 text-[14px]">
+                        {errors.Dishimage.message}*
+                     </p>
+                  )} 
                 </div>
          </div>
          <div className='w-full py-8 px-5 flex items-center justify-center'>
-                    <button type='button' className='text-[#DC3333] px-3 underline underline-offset-4 rounded-xl' onClick={()=>{props.setaddnewtoggle(false)}}>Cancel</button>
-                     <button className='bg-[#0BBA08] ml-auto text-white px-10 flex flex-row items-center justify-center py-5 gap-5 rounded-xl'>
-                        Request
-                          <svg width="129" height="16" viewBox="0 0 129 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                               <path d="M128.707 8.70711C129.098 8.31658 129.098 7.68342 128.707 7.29289L122.343 0.928932C121.953 0.538408 121.319 0.538408 120.929 0.928932C120.538 1.31946 120.538 1.95262 120.929 2.34315L126.586 8L120.929 13.6569C120.538 14.0474 120.538 14.6805 120.929 15.0711C121.319 15.4616 121.953 15.4616 122.343 15.0711L128.707 8.70711ZM0 9H128V7H0V9Z" fill="white"/>
-                          </svg>
-                     </button>
-                </div>
+            {/* Btn for Cancel the Form */}
+            <button type='button' className='text-[#DC3333] px-3 underline underline-offset-4 rounded-xl' onClick={()=>{props.setaddnewtoggle(false)}}>Cancel</button>
+            {/* Btn for Submit the New Add Request */}
+            <button className='bg-[#0BBA08] ml-auto text-white px-10 flex flex-row items-center justify-center py-5 gap-5 rounded-xl'>
+               Request
+                 <svg width="129" height="16" viewBox="0 0 129 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M128.707 8.70711C129.098 8.31658 129.098 7.68342 128.707 7.29289L122.343 0.928932C121.953 0.538408 121.319 0.538408 120.929 0.928932C120.538 1.31946 120.538 1.95262 120.929 2.34315L126.586 8L120.929 13.6569C120.538 14.0474 120.538 14.6805 120.929 15.0711C121.319 15.4616 121.953 15.4616 122.343 15.0711L128.707 8.70711ZM0 9H128V7H0V9Z" fill="white"/>
+                 </svg>
+            </button>
+         </div>
        </form>
     </>
   )
