@@ -1083,3 +1083,73 @@ export const tablelisted = async() =>{
   }
   
 }
+
+
+export const bankapi=()=>{
+  return  [
+    {
+      "name": "State Bank of India",
+      "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/58/State_Bank_of_India_logo.svg/2560px-State_Bank_of_India_logo.svg.png"
+    },
+    {
+      "name": "HDFC Bank",
+      "logo_url": "https://www.shutterstock.com/image-vector/hdfc-bank-logo-vector-indian-260nw-2351748935.jpg"
+    },
+    {
+      "name": "ICICI Bank",
+      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/ICICI_Bank_Logo.svg/2560px-ICICI_Bank_Logo.svg.png"
+    },
+    {
+      "name": "Axis Bank",
+      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Axis_Bank_logo.svg/2560px-Axis_Bank_logo.svg.png"
+    },
+    {
+      "name": "Punjab National Bank",
+      "logo_url": "https://static.vecteezy.com/system/resources/previews/019/909/650/non_2x/punjab-national-bank-transparent-pnb-free-free-png.png"
+    },
+    {
+      "name": "Bank of Baroda",
+      "logo_url": "https://1000logos.net/wp-content/uploads/2021/06/Bank-of-Baroda-logo.jpg"
+    },
+    {
+      "name": "Kotak Mahindra Bank",
+      "logo_url": "https://logos-download.com/wp-content/uploads/2016/06/Kotak_Mahindra_Bank_logo.png"
+    },
+    {
+      "name": "Canara Bank",
+      "logo_url": "https://i.pinimg.com/originals/0e/17/ea/0e17eaf90cfd6de3c7aa52437a2b7ee4.png"
+    },
+    {
+      "name": "Union Bank of India",
+      "logo_url": "https://cdn.freebiesupply.com/logos/large/2x/union-bank-of-india-logo-png-transparent.png"
+    },
+    {
+      "name": "IndusInd Bank",
+      "logo_url": "https://www.indusind.com/content/dam/indusind-platform-images/mediabrand/IndusIndBankJPEGlogo.jpg"
+    }
+  ]  
+}
+
+
+export const  registered_Bank_details = ()=>{
+  return [
+    {
+      ID:100123,
+      BankName:"ICIC Bank",
+      BankURL:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/ICICI_Bank_Logo.svg/2560px-ICICI_Bank_Logo.svg.png",
+      AccountNo:"65458555565",
+      IFSCCode:"IDIG0011001",
+      HolderName:"John",
+      Primary:true
+    },
+    {
+      ID:1002910,
+      BankName:"AXIS Bank",
+      BankURL:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Axis_Bank_logo.svg/2560px-Axis_Bank_logo.svg.png",
+      AccountNo:"65458555565",
+      IFSCCode:"IDIG00110013",
+      HolderName:"Jack",
+      Primary:false
+    }
+  ]
+}
